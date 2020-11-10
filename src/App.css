@@ -1,0 +1,28 @@
+@import '~antd/dist/antd.css';
+
+.IndvidualProperty{
+  float:left;
+  width: 25%
+}
+.ant-card-extra {
+  float:initial;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.ant-card-head-wrapper {
+  text-align: center !important;
+  display:block  
+}
+
+.HouseDetailsSection{
+  width: 58%;
+  float: left;
+}
+
+th.ant-descriptions-item-label {
+    font-weight: 600;
+    font-size: initial;
+}
+
+
