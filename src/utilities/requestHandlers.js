@@ -3,12 +3,10 @@
  * @param {object} response - the Response() object to process
  */
 export function status(response) {
-    console.log("this is response status")
-    console.log(response.status)
     if (response.status >= 200 && response.status < 300) {
       return response;
     } else {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {        
         return response.json().then(reject);
       });
     }
