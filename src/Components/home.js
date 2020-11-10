@@ -9,7 +9,7 @@ function Home(props) {
   return (
       <div className="site-layout-content">
         <div style={{ padding: '2% 20%' }}>
-          <Search placeholder="input search text"
+          <Search placeholder="input  search text"
             allowClear
             enterButton="Search"
             size="large"
