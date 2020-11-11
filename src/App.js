@@ -18,7 +18,7 @@ function App() {
         <BreadCrumbs>
         </BreadCrumbs>
         <Switch>
-          <Route path="/" exact children={Home}/>
+          <Route path="/"  exact children={Home}/>
           <Route path="/HouseDetail/:id" children={HouseDetail}/>
           <Route path="/Register" children={RegisterPage}/>
           <Route path="/Login" children={Login}/>
