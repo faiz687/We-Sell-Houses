@@ -16,7 +16,6 @@ const tailLayout = { wrapperCol: { offset: 4, span: 15 }, };
     const { Signupcode, ...data } = values;
     fetch('https://general-mexico-8000.codio-box.uk/api/v1/users', {
         method: "POST",
-        mode:"no-cors",
         body: JSON.stringify(data),
         headers: {
              "Content-Type": "application/json",

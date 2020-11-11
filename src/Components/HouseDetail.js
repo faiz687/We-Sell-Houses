@@ -18,17 +18,3 @@ function HouseDetail( { match } )  {
 
 export default HouseDetail;
 
-
-
-// UserId: 1
-// category: "richhouse"
-// dateCreated: "2020-11-07T21:11:00.000Z"
-// description: "richhouse"
-// feature: null
-// highpriority: 1
-// houseid: 2
-// imageURL: "https://cdn.pixabay.com/photo/2016/11/18/17/46/architecture-1836070_960_720.jpg"
-// location: "milan"
-// offerprice: 541
-// title: "richhouse"
-// underoffer: 1
