@@ -14,12 +14,13 @@ const tailLayout = { wrapperCol: { offset: 4, span: 15 }, };
   const onFinish = values => {    
     console.log('Received values of form: ', values);
     const { Signupcode, ...data } = values;
-    fetch('http://localhost:3030/api/v1/users', {
+    fetch('https://general-mexico-8000.codio-box.uk/api/v1/users', {
         method: "POST",
+        mode:"no-cors",
         body: JSON.stringify(data),
         headers: {
-            "Content-Type": "application/json"
-        }             
+             "Content-Type": "application/json",
+         }             
     })
     .then(status)
     .then(json)
@@ -35,7 +36,7 @@ const tailLayout = { wrapperCol: { offset: 4, span: 15 }, };
   };
 
   const CheckCode = (rule, value) => {
-    if (value === "we_sell_houses_agent") {
+    if (value === " ") {
       return Promise.resolve();
     }
     return Promise.reject('Invalid Code!');
