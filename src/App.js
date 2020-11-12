@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
      <Layout className="layout">
-       <MainHeader></MainHeader>
+       <MainHeader> </MainHeader>
        <Content style={{ padding: '0 50px' }}>
         <Switch>
           <Route path="/"  exact children={Home}/>
