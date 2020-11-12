@@ -31,18 +31,18 @@ class PropertiesGrid extends React.Component {
       return <h3>Loading posts...</h3>
     }
      const cardList = this.state.posts.map(post => {
-      return (
-        <div class={"IndvidualProperty"} style={{padding:"10px"}} key={post.houseid}>
+      return (        
+        <div class="IndvidualProperty" style={{padding:"10px"}} key={post.houseid}>
         <Link to={`/HouseDetail/${post.houseid}`} >
         <Card hoverable extra={post.title}
         cover={<img alt="example" src={post.imageURL} />}>
         <Meta title={post.title} description={post.category} />
-        </Card>,
+        </Card>
         </Link>
         </div>        
       )
     });
-    return cardList;
+   return (<section class="PropertyGridClass"> {cardList}  </section>);
   }
 }
 
