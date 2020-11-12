@@ -1,6 +1,7 @@
 import React from 'react';
-import { PageHeader, Input } from 'antd';
+import { Input } from 'antd';
 import PropertiesGrid from './propertygrid';
+import FilteringGrid from './FilteringGrid';
 
 const { Search } = Input;
 
@@ -9,16 +10,16 @@ function Home(props) {
   return (
       <div className="site-layout-content">
         <div style={{ padding: '2% 20%' }}>
-          <Search placeholder="input  search text"
+          <Search placeholder="Search by House feature"
             allowClear
             enterButton="Search"
             size="large"
-            onSearch={null}/>
-          <PageHeader className="site-page-header"
-            title="304CEM Blog"
-            subTitle="Welcome to the demo blog."/>          
-        </div>  
+            onSearch={null}/>         
+        </div>
+        <section class="MainBodySection">
+        <FilteringGrid/>
         <PropertiesGrid/>
+        </section>
       </div>
   );
 }

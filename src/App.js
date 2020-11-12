@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch , Route } from "react-router-dom";
 import MainHeader from './Components/MainHeader.js';
-import BreadCrumbs from './Components/BreadCrumbs.js';
 import HouseDetail from './Components/HouseDetail.js';
 import RegisterPage from './Components/Register.js';
 import Login from './Components/Login.js';
@@ -15,8 +14,6 @@ function App() {
      <Layout className="layout">
        <MainHeader></MainHeader>
        <Content style={{ padding: '0 50px' }}>
-        <BreadCrumbs>
-        </BreadCrumbs>
         <Switch>
           <Route path="/"  exact children={Home}/>
           <Route path="/HouseDetail/:id" children={HouseDetail}/>
