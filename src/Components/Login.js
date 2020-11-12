@@ -39,7 +39,7 @@ const onFinish = values => {
   return (
     <Card title="Login">
     <Form {...layout}  name="basic" size="small"  initialValues={{ remember: true }}  onFinish={onFinish} >
-    <Form.Item label="Email" name="email" rules={EmailRules}>
+    <Form.Item label="Email"  name="email" rules={EmailRules}>
     <Input />
     </Form.Item>
     <Form.Item label="Password" name="password" rules={PasswordRules}>
