@@ -16,7 +16,7 @@ function App() {
        <Content style={{ padding: '0 50px' }}>
         <Switch>
           <Route path="/"  exact children={Home}/>
-          <Route path="/HouseDetail/:id" children={HouseDetail}/>
+          <Route path="/HouseDetail/:id" children={<HouseDetail />} />
           <Route path="/Register" children={RegisterPage}/>
           <Route path="/Login" children={Login}/>
         </Switch>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
 import PropertiesGrid from './propertygrid';
-import FilteringGrid from './FilteringGrid';
 
 const { Search } = Input;
 
@@ -17,7 +16,6 @@ function Home(props) {
             onSearch={null}/>         
         </div>
         <section class="MainBodySection">
-        <FilteringGrid/>
         <PropertiesGrid/>
         </section>
       </div>

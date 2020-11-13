@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
+import { withRouter } from 'react-router';
 import HouseDescriptions from './HouseDescriptions';
 
 function HouseDetail( { match } )  {
