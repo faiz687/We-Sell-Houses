@@ -16,6 +16,7 @@ function Home(props) {
             onSearch={null}/>         
         </div>
         <section class="MainBodySection">
+          <FilteringGrid/>
         <PropertiesGrid/>
         </section>
       </div>
