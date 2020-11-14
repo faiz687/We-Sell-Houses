@@ -9,14 +9,12 @@ class PropertiesGrid extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      posts: []
-    }
+    this.state = { posts: [] }
+    
   }
 
   componentDidMount() {
     this.setState({ posts: HouseListJson })
-
 //     fetch('https://round-job-8000.codio-box.uk/api/v1/property')
 //     .then(status)
 //     .then(json)
@@ -32,7 +30,7 @@ class PropertiesGrid extends React.Component {
     }
      const cardList = this.state.posts.map(post => {
       return (        
-        <div class="IndvidualProperty" style={{padding:"10px"}} key={post.houseid}>
+        <div className="IndvidualProperty" style={{padding:"10px"}} key={post.houseid}>
         <Link to={`/HouseDetail/${post.houseid}`} >
         <Card hoverable extra={post.title}
         cover={<img alt="example" src={post.imageURL} />}>
