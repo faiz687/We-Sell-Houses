@@ -30,39 +30,6 @@ class App extends React.Component {
     this.setState({user: {loggedIn:false}});
   }
   
-<<<<<<< HEAD
-  
-  render( ){}
-  
-  
-  
-  
-}
-
-
-
-
-
-
-
-function App() {
-  return (
-    <Router>
-     <Layout className="layout">
-       <MainHeader> </MainHeader>
-       <Content style={{ padding: '0 50px' }}>
-        <Switch>
-          <Route path="/"  exact children={Home}/>
-          <Route path="/HouseDetail/:id" children={<HouseDetail />} />
-          <Route path="/Register" children={RegisterPage}/>
-          <Route path="/Login" children={Login}/>
-        </Switch>
-       </Content>
-       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-     </Layout>    
-  </Router> 
-  );
-=======
   render(){
     
     const context = { user: this.state.user , login: this.login, logout: this.logout } ;
@@ -86,7 +53,6 @@ function App() {
       </UserContext.Provider>
     );
   }
->>>>>>> newfeature
 }
 
 export default App;
