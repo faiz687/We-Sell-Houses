@@ -2,17 +2,10 @@ import React from 'react';
 import { Card } from 'antd';
 import FilterDataDropDowns from './FilterDataDropDowns';
 
-
-
 function FilteringGrid(props) {
-  
-  
-  function handleChange(value) {
-  console.log(`selected ${value}`);
-}
-  
+   
   return (
-    <section class="FilterGridClass">
+    <section className="FilterGridClass">
     <Card title="Refine Your Search">
     <FilterDataDropDowns/> 
     </Card>

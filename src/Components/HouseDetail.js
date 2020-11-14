@@ -2,20 +2,48 @@ import React from 'react';
 import { Card } from 'antd';
 import { withRouter } from 'react-router';
 import HouseDescriptions from './HouseDescriptions';
+import UserContext from '../Contexts/User';
 
-function HouseDetail( { match } )  {
+
+class HouseDetail extends React.Component {
   
-  const Houseid = match.params.id;
-  const HouseDetails =  require('../data/House.json')[Houseid]; 
-  return (
-    <Card title={<h1>{HouseDetails.title}</h1>}>
-    <img src={HouseDetails.imageURL} alt={"meaning full text"}   style={{width : "40%" , float :"right" ,  marginTop : "46px"   }}/> 
-    <section class={"HouseDetailsSection"}>
-    <HouseDescriptions {...HouseDetails}/>        
+  constructor(props) {
+    super(props);
+    this.state = { house :  undefined  }
+  }
+  
+    static contextType = UserContext;
+  
+  componentDidMount() {
+    const Houseid = this.props.match.params.id; // available using withRouter()
+    const HouseData =  require('../data/House.json')[Houseid];
+    HouseData["User"] = this.context.user;
+    this.setState( { house : HouseData });
+//     console.log(this.state.UserPermission)
+//     fetch(`http://localhost:3030/api/v1/articles/${id}`)
+//     .then(status)
+//     .then(json)
+//     .then(post => {
+//       this.setState({post:post})
+//     })
+//     .catch(err => {
+//       console.log(`Fetch error for post ${id}`)
+//     });
+  }
+  
+
+    
+  render () {
+    if (!this.state.house) { return <h3>Loading Properties...</h3>  }
+    const house = this.state.house;
+    return (
+    <Card className={"CardClass"}  title={<h1>{house.title}</h1>}>
+    <img src={house.imageURL} alt={"meaning full text"}   style={{width : "40%" , float :"right" ,  marginTop : "46px"   }}/> 
+    <section className={"HouseDetailsSection"}>
+    <HouseDescriptions {...house}/>        
     </section>
     </Card>
-  );
+  );}
 }
 
-export default HouseDetail;
-
+export default withRouter(HouseDetail);
