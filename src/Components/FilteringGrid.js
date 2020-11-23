@@ -6,7 +6,7 @@ function FilteringGrid(props) {
    
   return (
     <section className="FilterGridClass">
-    <Card title="Refine Your Search">
+    <Card title="Refine  Your Search">
     <FilterDataDropDowns/> 
     </Card>
     </section>
