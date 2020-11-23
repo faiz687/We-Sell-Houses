@@ -1,6 +1,5 @@
 @import '~antd/dist/antd.css';
 
-
 .IndvidualProperty{
   width: 25%
 }
@@ -41,6 +40,20 @@ section.PropertyGridClass {
     display: flex;
     flex-flow: row wrap;
 }
+
+.ant-row.ant-form-item.SubmitButton {
+    text-align: center;
+}
+
+.ant-row.ant-form-item.SubmitButton {
+  text-align:center;
+}
+
+.ant-row.ant-form-item.SubmitButton div{
+  max-width: initial !important;
+}
+
+
 
 @media only screen and (max-width: 1600px) {
   
