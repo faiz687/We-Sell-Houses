@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch , Route } from "react-router-dom";
 import MainHeader from './Components/MainHeader.js';
 import HouseDetail from './Components/HouseDetail.js';
 import RegisterPage from './Components/Register.js';
+import RegisterHouse from './Components/RegisterHouse.js';
 import Login from './Components/Login.js';
 import Home from './Components/home';
 import UserContext from './Contexts/User';
@@ -45,6 +46,7 @@ class App extends React.Component {
                  <Route path="/HouseDetail/:id" children={<HouseDetail />} />
                  <Route path="/Register" children={<RegisterPage />} />
                  <Route path="/Login" children={<Login /> } />
+                 <Route path="/RegisterHouse" children={<RegisterHouse /> } />
               </Switch>
             </Content>
             <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

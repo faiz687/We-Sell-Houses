@@ -37,7 +37,7 @@ class HouseDetail extends React.Component {
     if (!this.state.house) { return <h3>Loading Properties...</h3>  }
     const house = this.state.house;
     return (
-    <Card className={"CardClass"}  title={<h1>{house.title}</h1>}>
+    <Card style={{marginTop:"5em"}}  title={<h1>{house.title}</h1>}>
     <img src={house.imageURL} alt={"meaning full text"}   style={{width : "40%" , float :"right" ,  marginTop : "46px"   }}/> 
     <section className={"HouseDetailsSection"}>
     <HouseDescriptions {...house}/>        

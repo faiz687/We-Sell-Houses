@@ -1,14 +1,8 @@
 import React from 'react';
-import  { useState } from 'react';
-import { Descriptions, Badge } from 'antd';
+import { Descriptions } from 'antd';
 import HouseFeatures from './HouseFeatures.js';
-import { Typography } from 'antd';
 import { Checkbox } from 'antd';
 import { Button } from 'antd';
-import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
-const { Paragraph } = Typography;
-
-
 
 class HouseDescriptions extends React.Component { 
   
@@ -32,7 +26,7 @@ class HouseDescriptions extends React.Component {
     const AllValues = {}  
     let Inputvalues = document.getElementsByClassName('ptags');    
     for (var i = 0 ; i < Inputvalues.length; i++) {      
-      if ( Inputvalues[i].id  == "features" ) {        
+      if ( Inputvalues[i].id  === "features" ) {        
         Featurelist.push(Inputvalues[i].textContent)        
         } else{
           AllValues[Inputvalues[i].id ]  =  Inputvalues[i].textContent
@@ -44,7 +38,7 @@ class HouseDescriptions extends React.Component {
   }
   
   EditButtonClicked() {
-    if  ( this.state.Edit == true  ) { 
+    if  ( this.state.Edit === true  ) { 
       
       this.setState({ Edit : false });
       this.props.feature.edit = false;
@@ -73,7 +67,7 @@ class HouseDescriptions extends React.Component {
   }
   
   RenderSubmitButton() {  
-    if(this.state.UserPermission &&  (this.state.Edit == true) ) {
+    if(this.state.UserPermission &&  (this.state.Edit === true) ) {
       return (< Button type="primary"  onClick={this.SubmitButtonClicked} style={{float:"right" , fontWeight: "600"  , marginTop: "10px"}}>Update Details</Button>)
     }   
 }

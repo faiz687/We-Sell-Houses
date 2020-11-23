@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.css';
 
+
 .IndvidualProperty{
   width: 25%
 }
@@ -50,7 +51,9 @@ section.PropertyGridClass {
 }
 
 .CardClass{
-  margin-top: 5%;
+ width: 50%;
+ margin: 0px auto;
+ margin-top: 5% !important;
 }
 
 .ptags{

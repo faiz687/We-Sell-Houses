@@ -2,29 +2,32 @@ import React from 'react';
 import { Card } from 'antd';
 import { Form, Input, Button  } from 'antd';
 import { status, json } from '../utilities/requestHandlers';
+import HouseCategory from './HouseCategory';
 import UserContext from '../Contexts/User';
 
 
 const layout = { labelCol : { span: 4 } ,  wrapperCol : { span: 15 }, };
   
 const tailLayout = { wrapperCol: { offset: 4 , span: 15 } , };
-  
-const EmailRules =  [ {  type : "email" ,  message: 'Invalid email!'   },    { required: true , message: 'Please enter your Email!' }  ] ;
-  
-const PasswordRules =  [ { required: true , message: 'Please enter ypur password!' }  ] ;
 
 
-class Login extends React.Component { 
+class RegisterHouse extends React.Component { 
   
   constructor(props) {
     super(props)
     this.onFinish = this.onFinish.bind(this);
+    this.OnCategoryChange = this.OnCategoryChange.bind(this);
   }
   
-  static contextType = UserContext;
+  OnCategoryChange = value => {
+    
+    console.log("on category change being called")
+      
+  }
+  
   
   onFinish = values => {    
-    let {email, password} = values;
+    const {email, password} = values;
      fetch('https://round-job-8000.codio-box.uk/api/v1/users/Login', {
             method: "POST",
             headers: {
@@ -47,22 +50,24 @@ class Login extends React.Component {
   
   render() {
     return (
-        <Card title="Login" className={"CardClass"} >
-        <Form {...layout}  name="basic" size="middle"  initialValues={{ remember: true }}  onFinish={this.onFinish} >
-        <Form.Item label="Email"  name="email" rules={EmailRules}>
-        <Input />
-        </Form.Item>
-        <Form.Item label="Password" name="password" rules={PasswordRules}>
-        <Input.Password />
-        </Form.Item>
-        <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">Login</Button>
-        </Form.Item>
-        </Form>
+        <Card title="Register House" className={"CardClass"} >
+          <Form {...layout}  name="basic" size="middle"  initialValues={{ remember: true }}  onFinish={this.onFinish} >
+            <Form.Item label="House Title"  name="title" ><Input /></Form.Item>
+            <Form.Item name="description" label="Describe House"><Input.TextArea style={{ height:"7em"}} /></Form.Item>
+            <Form.Item label="Category"  name="category" >
+              <HouseCategory parentMethod={this.OnCategoryChange}/>
+            </Form.Item>
+            <Form.Item >
+              <Button type="primary" htmlType="submit">Login</Button>
+            </Form.Item>
+          </Form>
         </Card>
      );
   }
 
 }
 
-export default Login;
+
+
+
+export default RegisterHouse;
