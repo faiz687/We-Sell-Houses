@@ -46,7 +46,7 @@ class RegisterHouse extends React.Component {
     
   }
 
-  onFinish = values => {
+  onFinish = values => { 
     console.log(values)
     
     
