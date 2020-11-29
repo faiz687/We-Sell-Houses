@@ -79,6 +79,12 @@ section.PropertyGridClass {
   margin : 10px !important;
 }
 
+.Paginationclass{
+  text-align: center;
+  margin-top: 10px;
+  flex-basis: 100%;
+}
+
 
 
 

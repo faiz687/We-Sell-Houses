@@ -38,13 +38,13 @@ UnderOfferOnChange (e) {
   this.setState({ UnderOffer : e.target.checked });
 }
   
-LocationEntered(value) {    
-   let FinalLocation =  this.state.Location += value.nativeEvent.data
-   this.setState({ Location : FinalLocation });
-  }
+LocationEntered(value) {  
+   this.setState({ Location : this.state.Location +  value.nativeEvent.data });
+   console.log(this.state.Location)
+  } 
   
 SubmitSearch(e) {
-  let Query = Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
+  Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
 
   }
   
