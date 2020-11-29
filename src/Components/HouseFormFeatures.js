@@ -4,7 +4,7 @@ import { Form, Button , Input ,   Space } from 'antd';
 function HouseFormFeatures(props) {
 
   return (
-    <Form.List name="Features">
+    <Form.List name="feature">
       { (fields , { add, remove } ) => (
          <>
           {fields.map( field => (
@@ -18,7 +18,7 @@ function HouseFormFeatures(props) {
               </Form.Item>
             ))}
               <Form.Item label="Features">
-                  <Button type="dashed" onClick={() => add()} block icon={" + "}></Button>
+                  <Button type="dashed" onClick={() => add()} block >+</Button>
               </Form.Item>
           </>
         )}
