@@ -18,7 +18,7 @@ function Home(props) {
         </div>
         <section className="MainBodySection">
         <FilteringGrid/>
-        <PropertiesGrid/>
+        <PropertiesGrid/>        
         </section>
       </div>
   );

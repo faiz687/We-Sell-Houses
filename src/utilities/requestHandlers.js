@@ -3,7 +3,6 @@
  * @param {object} response - the Response() object to process
  */
 export function status(response) {
-    console.log(response)
     if (response.status >= 200 && response.status < 300) {
       return response;
     } else {

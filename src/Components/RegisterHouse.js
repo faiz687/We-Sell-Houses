@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'antd';
 import { Card } from 'antd';
 import { Form, Input, Button , Upload  , InputNumber } from 'antd';
 import { Checkbox } from 'antd';
@@ -45,7 +44,7 @@ class RegisterHouse extends React.Component {
      const feature = values.feature.map(x => x.first);
      values.feature = feature
      values.UserId =  this.context.user.UserId
-     values.HouseImage =  this.state.HouseImage 
+     values.imageURL =  this.state.HouseImage.thumbUrl 
      console.log(values)
 
      fetch('https://round-job-8000.codio-box.uk/api/v1/property', {
@@ -84,7 +83,7 @@ class RegisterHouse extends React.Component {
             <Form.Item name="underoffer"  label="Under Offer" valuePropName="checked" initialValue ><Checkbox   /></Form.Item>
             <Form.Item name="highpriority"  label="High Priority" valuePropName="checked" initialValue ><Checkbox   /></Form.Item>
             <Form.Item name="Activated"  label="Archive" valuePropName="checked" initialValue ><Checkbox   /></Form.Item>
-            <Form.Item name="HouseImage" label="Upload Image" getValueFromEvent={this.UploadImage}>
+            <Form.Item name="HouseImage" valuePropName="fileList" label="Upload Image" getValueFromEvent={this.UploadImage}>
               <Upload name="HouseImageUpload" beforeUpload={() => false} onChange={this.UploadImage} listType="picture"><Button>Click to upload</Button></Upload>                                        
             </Form.Item>
             <Form.Item className={"SubmitButton"}>                
