@@ -1,5 +1,9 @@
 import React from 'react';
 import { Select } from 'antd';
+import { Input } from 'antd';
+import { Checkbox } from 'antd';
+import { Button } from 'antd';
+
 const { Option } = Select;
 
 const CategoryOptions  = [ "flat" , "Detached" ,"Semi-Detached" , "Bunglow" , "Terraced"];
@@ -13,45 +17,61 @@ class FilterDataDropDowns extends React.Component {
   
   constructor(props) {
     super(props)
+    this.state =   { Price : ""  , Category : "",  Location : "", UnderOffer : undefined } ;
     this.PriceDropDownHandle = this.PriceDropDownHandle.bind(this);
     this.CategoryDropDownHandle = this.CategoryDropDownHandle.bind(this);
+    this.UnderOfferOnChange = this.UnderOfferOnChange.bind(this);
+    this.LocationEntered = this.LocationEntered.bind(this);
+    this.SubmitSearch = this.SubmitSearch.bind(this);
   
   }
   
-  PriceDropDownHandle(value) {
+PriceDropDownHandle(value) {
+  this.setState({ Price : value });
+}
   
-  console.log(`selected ${value}`);
-  
-  
+CategoryDropDownHandle(value) {
+  this.setState({ Category : value });
   }
   
-  CategoryDropDownHandle(value) {
+UnderOfferOnChange (e) {
+  this.setState({ UnderOffer : e.target.checked });
+}
   
-  console.log(`selected ${value}`);
+LocationEntered(value) {    
+   let FinalLocation =  this.state.Location += value.nativeEvent.data
+   this.setState({ Location : FinalLocation });
+  }
   
+SubmitSearch(e) {
+  let Query = Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
+
   }
   
   render() {
     
   const CategroryDropDown = () => {  
   const DropDownoptions = CategoryOptions.map( option => {     
-    return <Option value={option}>{option}</Option>    
+  return <Option value={option}>{option}</Option>    
  });    
-  return <Select defaultValue="Category" style={{ width: 150 , margin : "10px" }} onChange={this.CategoryDropDownHandle}> {DropDownoptions}</Select>    
+  return <Select defaultValue="Category" className="filterdataGrid" onChange={this.CategoryDropDownHandle}> {DropDownoptions}</Select>    
 }
   
   const PriceDropDown = () => {  
   const DropDownoptions = PriceOptions.map( option => {
     return <Option value={option.value}>{option.text}</Option>
 });
-  return <Select defaultValue="Price" style={{ width: 150  , margin : "10px" }} onChange={this.PriceDropDownHandle}> {DropDownoptions}</Select>    
-}
-    
-  return ( <div> {CategroryDropDown()} {PriceDropDown()} </div> );
-
+  return <Select defaultValue="Price" className="filterdataGrid" onChange={this.PriceDropDownHandle}> {DropDownoptions}</Select>    
 }
 
+  return ( <div> {CategroryDropDown()} 
+                 {PriceDropDown()} 
+                 <Input placeholder="Search by Location" className={"filterdataGrid"} onChange={this.LocationEntered} /> 
+                 <Checkbox onChange={this.UnderOfferOnChange} className="filterdataGrid" >Under Offer</Checkbox>
+                 <Button type="primary" className="filterdataGrid" id="submitsearchbutton" onClick={this.SubmitSearch}>Search</Button>
+          </div> );
+
+
+  }
 }
-
-
 export default FilterDataDropDowns;
