@@ -3,11 +3,11 @@ import { Card } from 'antd';
 import FilterDataDropDowns from './FilterDataDropDowns';
 
 function FilteringGrid(props) {
-   
+     
   return (
     <section className="FilterGridClass">
     <Card title="Refine  Your Search">
-    <FilterDataDropDowns/> 
+    <FilterDataDropDowns {...props}/> 
     </Card>
     </section>
   );

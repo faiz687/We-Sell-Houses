@@ -3,6 +3,7 @@ import { Select } from 'antd';
 import { Input } from 'antd';
 import { Checkbox } from 'antd';
 import { Button } from 'antd';
+import PropertiesGrid from './propertygrid';
 
 const { Option } = Select;
 
@@ -16,14 +17,13 @@ const PriceOptions = [ { value :  "< 500" ,  text :  "Less than £500"    } ,
 class FilterDataDropDowns extends React.Component { 
   
   constructor(props) {
-    super(props)
-    this.state =   { Price : ""  , Category : "",  Location : "", UnderOffer : undefined } ;
+    super(props)    
+    this.state =   { Price : ""  , Category : "",  Location : "", UnderOffer : undefined} ;
     this.PriceDropDownHandle = this.PriceDropDownHandle.bind(this);
     this.CategoryDropDownHandle = this.CategoryDropDownHandle.bind(this);
     this.UnderOfferOnChange = this.UnderOfferOnChange.bind(this);
     this.LocationEntered = this.LocationEntered.bind(this);
-    this.SubmitSearch = this.SubmitSearch.bind(this);
-  
+    this.SubmitSearch = this.SubmitSearch.bind(this);  
   }
   
 PriceDropDownHandle(value) {
@@ -40,12 +40,11 @@ UnderOfferOnChange (e) {
   
 LocationEntered(value) {  
    this.setState({ Location : this.state.Location +  value.nativeEvent.data });
-   console.log(this.state.Location)
   } 
   
 SubmitSearch(e) {
-  Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
-
+  const Query = Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
+  this.props.QueryChangeMethod(Query)
   }
   
   render() {
