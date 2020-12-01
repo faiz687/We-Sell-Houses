@@ -8,7 +8,7 @@ const { Option } = Select;
 
 const CategoryOptions  = [ "flat" , "Detached" ,"Semi-Detached" , "Bunglow" , "Terraced"];
   
-const PriceOptions = [ { value : "< 500" ,  text :  "Less than £500"    } , 
+const PriceOptions = [ { value :  "< 500" ,  text :  "Less than £500"    } , 
                          { value : "> 500" ,  text :  "More than £500"    },
                          { value : "> 1000" ,  text :  "Less than £1000"    },
                          { value : "< 1000" ,  text :  "More than £1000"    }];
