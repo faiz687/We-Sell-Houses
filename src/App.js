@@ -49,7 +49,7 @@ class App extends React.Component {
                  <Route path="/RegisterHouse" children={<RegisterHouse /> } />
               </Switch>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+            <Footer style={{ textAlign: 'center' }}>We sell Houses ©2020 Created by faizaan Chowdhary</Footer>
           </Layout>    
         </Router>
       </UserContext.Provider>

@@ -32,9 +32,7 @@ class HouseDescriptions extends React.Component {
           AllValues[Inputvalues[i].id ]  =  Inputvalues[i].textContent
         }              
     }
-    AllValues.features =  Featurelist
-
-      
+    AllValues.features =  Featurelist      
   }
   
   EditButtonClicked() {
