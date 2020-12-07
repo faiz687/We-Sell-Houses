@@ -15,19 +15,19 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { user :  { loggedIn : true ,  UserId :  1 ,  Username : "faizaan" , Password : "faizaan" }  }
+    this.state = { user :  { loggedIn : false   }  }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
   }
 
   login(user) {
-    console.log("User is now being set on the context");
+    //console.log("User is now being set on the context");
     user.loggedIn = true;
-    this.setState({user:user});
+    this.setState( { user : user } );
   }
 
   logout() {
-    console.log("Removing user from the app context");
+    //console.log("Removing user from the app context");
     this.setState({user: {loggedIn:false}});
   }
   

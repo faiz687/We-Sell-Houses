@@ -3,7 +3,6 @@ import { Select } from 'antd';
 import { Input } from 'antd';
 import { Checkbox } from 'antd';
 import { Button } from 'antd';
-import PropertiesGrid from './propertygrid';
 
 const { Option } = Select;
 
@@ -18,11 +17,11 @@ class FilterDataDropDowns extends React.Component {
   
   constructor(props) {
     super(props)    
-    this.state =   { Price : ""  , Category : "",  Location : "", UnderOffer : undefined} ;
+    this.state =   { Price : ""  , Category : "", UnderOffer : undefined} ;
     this.PriceDropDownHandle = this.PriceDropDownHandle.bind(this);
     this.CategoryDropDownHandle = this.CategoryDropDownHandle.bind(this);
     this.UnderOfferOnChange = this.UnderOfferOnChange.bind(this);
-    this.LocationEntered = this.LocationEntered.bind(this);
+//     this.LocationEntered = this.LocationEntered.bind(this);
     this.SubmitSearch = this.SubmitSearch.bind(this);  
   }
   
@@ -38,12 +37,14 @@ UnderOfferOnChange (e) {
   this.setState({ UnderOffer : e.target.checked });
 }
   
-LocationEntered(value) {  
-   this.setState({ Location : this.state.Location +  value.nativeEvent.data });
-  } 
+// LocationEntered(value) {
+//   this.setState({ Location : this.state.Location +  value.nativeEvent.srcElement.defaultValue });
+//   } 
   
 SubmitSearch(e) {
-  const Query = Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
+  let Query = Object.keys(this.state).map( a => a + "=" + this.state[a]).join('&');
+  const locationvalue =  document.querySelector("#locationinput").value
+  Query = Query+"&location="+locationvalue
   this.props.QueryChangeMethod(Query)
   }
   
@@ -65,7 +66,7 @@ SubmitSearch(e) {
 
   return ( <div> {CategroryDropDown()} 
                  {PriceDropDown()} 
-                 <Input placeholder="Search by Location" className={"filterdataGrid"} onChange={this.LocationEntered} /> 
+                 <Input id="locationinput" placeholder="Search by Location" className={"filterdataGrid"} /> 
                  <Checkbox onChange={this.UnderOfferOnChange} className="filterdataGrid" >Under Offer</Checkbox>
                  <Button type="primary" className="filterdataGrid" id="submitsearchbutton" onClick={this.SubmitSearch}>Search</Button>
           </div> );

@@ -14,26 +14,21 @@ class PropertiesGrid extends React.Component {
   }
   
   OnQueryChange(NewQuery) {
-      console.log(NewQuery)
       this.setState({ Query : NewQuery })
   }
-  
-  
+    
   OnPageChange(RequestedPage,PageSize) {
-     this.setState({ page : RequestedPage }) 
-      
+     this.setState({ page : RequestedPage })       
   }
-  
-  
+    
   SubmitClicked(NewQuery) { 
     this.setState({ Query : NewQuery })  
   }
   
   
-  componentDidUpdate(prevProps,previoustate,Snapshot) {
-    
+  componentDidUpdate(prevProps,previoustate,Snapshot) { 
       if (this.state.page!== previoustate.page) {
-        fetch('https://round-job-8000.codio-box.uk/api/v1/property?page='+this.state.page+'&limit='+this.state.limit)                               
+        fetch('https://round-job-3000.codio-box.uk/api/v1/property?page='+this.state.page+'&limit='+this.state.limit)                               
         .then(status)
         .then(json)
         .then(data => {
@@ -43,7 +38,8 @@ class PropertiesGrid extends React.Component {
       }
     
     if (this.state.Query!== previoustate.Query) {
-        fetch('https://round-job-8000.codio-box.uk/api/v1/property?page='+this.state.page+'&limit='+this.state.limit+'&'+this.state.Query)
+        console.log(this.state.Query)
+        fetch('https://round-job-3000.codio-box.uk/api/v1/property?page='+this.state.page+'&limit='+this.state.limit+'&'+this.state.Query)
         .then(status)
         .then(json)
         .then(data => {
@@ -55,26 +51,23 @@ class PropertiesGrid extends React.Component {
   
 
 
-  componentDidMount() {
-  
-    fetch('https://round-job-8000.codio-box.uk/api/v1/property?page='+this.state.page+'&limit='+this.state.limit)
+  componentDidMount() {  
+    fetch('https://round-job-3000.codio-box.uk/api/v1/property?page='+this.state.page+'&limit='+this.state.limit)
     .then(status)
     .then(json)
     .then(data => {
       this.setState({ Houses: data })
     })
     .catch(err => console.log("Error fetching articles", err));
-    
-    
-    fetch('https://round-job-8000.codio-box.uk/api/v1/property/TotalProperty')
+        
+    fetch('https://round-job-3000.codio-box.uk/api/v1/property/TotalProperty')
     .then(status)
     .then(json)
     .then(data => {
-      this.setState({ HousesCount: data.TotalHouses[0].totalhouse} )
+      this.setState({ HousesCount: data.totalhouse} )
     })
     .catch(err => console.log("Error fetching articles", err));
-    
-    
+        
   }
   
   render() {
@@ -91,9 +84,9 @@ class PropertiesGrid extends React.Component {
       return (        
         <div className="IndvidualProperty" style={{padding:"10px"}} key={post.houseid}>
         <Link to={`/HouseDetail/${post.houseid}`} >
-        <Card hoverable extra={post.title}
+        <Card hoverable extra={post.Title}
         cover={<img alt="example" src={post.imageURL} />}>
-        <Meta title={post.title} description={post.category} />
+        <Meta style={{textAlign:"center"}} title={post.Title} description={post.category} />
         </Card>
         </Link>
         </div>        

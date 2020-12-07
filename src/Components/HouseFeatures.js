@@ -1,15 +1,15 @@
 import React from 'react';
 import { List } from 'antd';
 
-function HouseFeatures(props) {
+function HouseFeatures(propss) {
   
-  const Edit = (props["edit"])
+  let featurelist = propss.props.feature.split(',');
+  
+  let Edit = propss.state.Edit
 
-  const data = Object.values(props)                                           
-    
   return (
 
-    <List size="small" dataSource={data} renderItem={item => <List.Item> <p className="ptags" id="features" contentEditable={Edit} >{item}</p></List.Item> } />    
+    <List size="small" dataSource={featurelist} renderItem={item => <List.Item> <p className="ptags" id="features" contentEditable={Edit} >{item}</p></List.Item> } />    
     
     );
 }

@@ -43,27 +43,24 @@ class RegisterHouse extends React.Component {
   onFinish = async (values) => {  
      const feature = values.feature.map(x => x.first);
      values.feature = feature
-     values.UserId =  this.context.user.UserId
+     values.UserId =  this.context.user.ID
      values.imageURL =  this.state.HouseImage.thumbUrl 
-     console.log(values)
-
-     fetch('https://round-job-8000.codio-box.uk/api/v1/property', {
+     fetch('https://round-job-3000.codio-box.uk/api/v1/property', {
             method: "POST",
             body: JSON.stringify(values),
             headers: {
-                "Authorization": "Basic " + btoa(this.context.user.Username + ":" + this.context.user.Password),
+                "Authorization": "Basic " + btoa(this.context.user.Name + ":" + this.context.user.password),
                 "Content-Type": "application/json"                
             }        
         })
     .then(status)
     .then(json)
     .then(user => {
-        console.log('Property added successfully');
+        alert("Your Property has been addded")
     })
     .catch(error => {
-         console.log(error)
-        // TODO: show nicely formatted error message
-        console.log('Property cannot be added');
+       alert('Property cannot be added, please try again later')
+       // use switch here and show error according to status codes or message appropriately.
     });    
      };
 
@@ -73,7 +70,7 @@ class RegisterHouse extends React.Component {
         <Card title="Register House" className={"CardClass"} >
           <Form {...layout} ref={this.formRef}  className={"RegisterPropertyClass"}  name="basic" size="middle"  initialValues={{ remember: true }}  onFinish={this.onFinish} >
             <Form.Item label="House Title" rules={Rules}  name="Title" ><Input /></Form.Item>
-            <Form.Item name="description" rules={Rules} label="Describe House"><Input.TextArea style={{ height:"7em"}} /></Form.Item>
+            <Form.Item name="description"  rules={Rules} label="Describe House : "><Input.TextArea style={{ height:"7em"}} /></Form.Item>
             <Form.Item label="Category" rules={Rules} name="category" >
               <HouseCategory OnChange={this.OnCategoryChange}/>
             </Form.Item>
