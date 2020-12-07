@@ -11,7 +11,7 @@ function MainHeader(props) {
   const isLoggedIn = user.user.loggedIn 
   
   const MenuButtonClicked = (click) => {
-    if (click.key == 5) {
+    if (click.key === 5) {
       user.logout();      
     }
 }

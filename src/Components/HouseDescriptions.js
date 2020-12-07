@@ -32,11 +32,12 @@ class HouseDescriptions extends React.Component {
       if ( Inputvalues[i].id  === "features" ) {        
         Featurelist.push(Inputvalues[i].textContent)        
         } else{
-          if ([Inputvalues[i].id] == "offerprice"){
+          if ([Inputvalues[i].id] == "offerprice"){            
             let offerprice = parseInt(Inputvalues[i].textContent.replace("£",""))
-            AllValues[Inputvalues[i].id]  =  offerprice
+            AllValues[Inputvalues[i].id]  =  offerprice;
+            
           } else {
-            AllValues[Inputvalues[i].id]  =  Inputvalues[i].textContent
+            AllValues[Inputvalues[i].id]  =  Inputvalues[i].textContent;
           }
           
         }              
@@ -47,7 +48,6 @@ class HouseDescriptions extends React.Component {
     AllValues.underoffer = underoffer.checked
     AllValues.highpriority = highpriority.checked    
     delete AllValues[""];
-    console.log(AllValues)
     fetch('https://round-job-3000.codio-box.uk/api/v1/property/'+this.props.houseid, {
             method: "PUT",
             body: JSON.stringify(AllValues),
@@ -62,6 +62,7 @@ class HouseDescriptions extends React.Component {
         alert("Your Property has been updated")
     })
     .catch(error => {
+      
        console.log(error)
        alert(error)
        alert('Property cannot be added, please try again later')
