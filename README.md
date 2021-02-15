@@ -37,7 +37,7 @@ list houses for sale to the general public.
 ###### **Home Page**
 ![](Images/HomePage.png)
 
-###### **Individual Propety Page**
+###### **Individual Property Page**
 ![](Images/IndividualPage.png)
 
 ######  **Login Page**
