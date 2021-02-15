@@ -32,6 +32,31 @@ list houses for sale to the general public.
 16. Delete an item entirely
 17. Mark an item as ‘high priority’
 
+## Demo
+
+###### **Home Page**
+![](Images/HomePage.png)
+
+
+###### **Individual Propety Page**
+![](Images/IndividualPage.png)
+
+
+######  **Login Page**
+![](Images/LoginPage.png)
+
+
+######  **User Registration Page**
+![](Images/RegistrationPage.png)
+
+
+######  **Property Registration Page 1**
+![](Images/PropertyRegitrationPage1.png)
+
+
+######  **Property Registration Page 1**
+![](Images/PropertyRegitrationPage2.png)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
