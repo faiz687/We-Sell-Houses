@@ -1,7 +1,7 @@
 # Frontend system for We sell Houses
 
 All the frontend components you view are in React JS components. In terms of
-visual design the CSS framework I have choosent Ant Design.
+visual design the CSS framework I have choosen Ant Design.
 
 ## Languages
 Javascript (ECMAS 6  features), HTML & CSS
