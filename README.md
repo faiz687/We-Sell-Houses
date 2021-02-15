@@ -1,4 +1,37 @@
-# Getting Started with Create React App
+# Frontend system for We sell Houses
+
+All the frontend components you view are in React JS components. In terms of
+visual design the CSS framework I have choosent Ant Design.
+
+## Languages
+Javascript (ECMAS 6  features), HTML & CSS
+
+## CSS framework 
+Ant Design 
+
+## Description
+We Sell Houses would like a new web application that allows users (estate agents) to
+list houses for sale to the general public.
+
+## features added : - 
+1.   View a list of all items (properties).
+2.   Search/filter items based on their features and/or keywords.
+3.   View any item detail.
+4.   New users (estate agents) can register on the app if they have a sign-up code.
+5.   log in to the app.
+6.   See their current list of properties.
+7.   Search/filter their current list of properties.
+8.   Add a new item (property) for sale.
+9.   Add or update the item category (commercial, terrace, apartment, …).
+10. Add or update a description.
+11. Add or update a list of features.
+12. Add or update an asking price.
+13. Add or update the location
+14. Attach or delete images
+15. Mark as “under offer”
+16. Delete an item entirely
+17. Mark an item as ‘high priority’
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
